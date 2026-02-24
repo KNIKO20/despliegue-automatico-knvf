@@ -24,6 +24,7 @@ jobs:
             fi
             cd /srv/apache-cicd
             git pull origin main
+            docker rm -f dda36d502308_apache_cicd || true
             docker compose down
             docker compose up -d --build --force-recreate
 
